@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Salary Calculator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="jquery-3.4.1.min.js"></script>
+        <script src="client.js"></script>
+        <script src="bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>Employee Salary Calculator</h1>
+        </header>
+        <main>
+            <div class="container">
+            <h2>Current Monthly Budget: $<span id="budgetOut"></span></h2>
+            <form>
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input type="text" class="form-control" id="firstNameInput">
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" class="form-control" id="lastNameInput">
+                </div>
+                <div class="form-group">
+                    <label for="employeeID">Employee ID Number</label>
+                    <input type="number" class="form-control" id="numberIDInput">
+                </div>
+                <div class="form-group">
+                    <label for="jobTitle">Job Title</label>
+                    <input type="text" class="form-control" id="jobTitleInput">
+                </div>
+                <div class="form-group">
+                    <label for="annualSalary">Annual Salary</label>
+                    <input type="number" class="form-control" id="annualSalaryInput" placeholder="Please enter with no commas or decimals">
+                </div>
+                <button type="submit" id="btn-add">Submit</button>
+              </form>
+              <table id="employee-table" class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">ID #</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Job Title</th>
+                    <th scope="col">Annual Salary</th>
+                  </tr>
+                </thead>
+                <tbody id="employee-data">
+                    <!--jQuery will add employee data--> 
+                </tbody>
+              </table>
+            </div>
+        </main>
+        <footer>
+
+        </footer>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script src="" async defer></script>
+    </body>
+</html>
