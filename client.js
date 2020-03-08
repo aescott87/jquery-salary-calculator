@@ -47,6 +47,9 @@ function clickEvent(event) {
 
     //run calculateMonthlyBudget
     calculateMonthlyBudget();
+
+    //call removeEmployee function when "Delete" button is clicked
+    $('#employee-table').on('click', '#btn-remove', removeEmployee);
 }
 
 function appendEmployee() {
@@ -54,8 +57,8 @@ function appendEmployee() {
     let $tbody = $('#employee-data');
     //empty tr element
     $tbody.empty();
-    for(let employee of employeeArray) {
-        let $tr = $(`<tr><td>${employee.id}</td><td>${employee.firstName}</td><td>${employee.lastName}</td><td>${employee.title}</td><td>${employee.salary}</td></tr>`);
+    for (let employee of employeeArray) {
+        let $tr = $(`<tr id="${employee.id}"><td>${employee.id}</td><td>${employee.firstName}</td><td>${employee.lastName}</td><td>${employee.title}</td><td>${employee.salary}</td><td><button id="btn-remove">Delete</button></td></tr>`);
         $tbody.append($tr);
     }
 }
@@ -64,11 +67,23 @@ function calculateMonthlyBudget() {
     console.log('in calculateMonthlyBudget');
     let totalMonthlyBudget = 0;
     for (let employee of employeeArray) {
-        totalMonthlyBudget += Math.round(Number(employee.salary)/12);
+        totalMonthlyBudget += Math.round(Number(employee.salary) / 12);
     } //end for loop
     let el = $('#budgetOut');
     el.empty();
     el.append(totalMonthlyBudget);
     //if statement to test budget against max budget
-    if(totalBudget > maxMonthlyBudget) {}
+    if (totalMonthlyBudget > maxMonthlyBudget) {
+        el.addClass('red')
+    }
+}
+
+function removeEmployee() {
+    for (i = 0; i < employeeArray.length; i++) {
+        if (employeeArray[i].id === $(this).closest('tr').attr('id')) {
+            employeeArray.splice(i, 1);
+        }
+    }
+    appendEmployee();
+    calculateMonthlyBudget();
 }

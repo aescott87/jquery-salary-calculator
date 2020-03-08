@@ -1,0 +1,15 @@
+.red {
+    background-color: red;
+}
+header {
+    background-color: rgb(12, 107, 167);
+}
+main {
+    background-color: lightskyblue;
+}
+h1 {
+    margin-bottom: 0px;
+}
+footer {
+    background-color: lightslategrey;
+}
